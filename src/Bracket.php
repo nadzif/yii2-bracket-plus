@@ -6,10 +6,6 @@ use yii\base\Component;
 use yii\base\InvalidConfigException;
 use yii\web\AssetBundle;
 
-/**
- * @Author: L Shaf
- * @Email : shafry2008@gmail.com
- */
 class Bracket extends Component
 {
     public static $componentName    = "bracket";
@@ -36,7 +32,7 @@ class Bracket extends Component
 
     public function getSourcePath()
     {
-        return $this->assetSourcePath . "/template/";
+        return $this->assetSourcePath . "/template";
     }
 
     public function registerAsset($view)

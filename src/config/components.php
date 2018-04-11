@@ -1,28 +1,28 @@
 <?php
 
-use akupeduli\material\assets\plugins\DataTableAsset;
+use akupeduli\bracket\assets\plugins\DataTableAsset;
 use yii\web\View;
 
 return [
-    'yii\web\JqueryAsset' => [
+    'yii\web\JqueryAsset'                           => [
         "jsOptions" => [
-            "position" => View::POS_HEAD
-        ]
+            "position" => View::POS_HEAD,
+        ],
     ],
-    
-    'yii\bootstrap\BootstrapPluginAsset' => [
+
+    'yii\bootstrap\BootstrapPluginAsset'            => [
         "jsOptions" => [
-            "position" => View::POS_HEAD
-        ]
+            "position" => View::POS_HEAD,
+        ],
     ],
-    
-    'yii\bootstrap\PopperAsset' => [
+
+    'yii\bootstrap\PopperAsset'                     => [
         "jsOptions" => [
-            "position" => View::POS_HEAD
-        ]
+            "position" => View::POS_HEAD,
+        ],
     ],
-    
+
     'mimicreative\datatables\assets\DataTableAsset' => [
-        'class' => DataTableAsset::className()
-    ]
+        'class' => DataTableAsset::className(),
+    ],
 ];

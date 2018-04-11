@@ -8,13 +8,13 @@ class BracketAsset extends AssetBundle
 {
     public $sourcePath = "@akupeduli/bracket/web";
     public $js         = [
-        // "js/custom.js"
+        "js/custom.js",
     ];
     public $css = [
         // "css/style.css"
     ];
     public $depends = [
-        // "akupeduli\\material\\assets\\core\\MainAsset",
+        "akupeduli\\bracket\\assets\\core\\MainAsset",
         // "akupeduli\\material\\assets\\plugins\\StickyKitAsset"
     ];
 }

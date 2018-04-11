@@ -32,9 +32,9 @@ class MainAsset extends AssetBundle
 
     public function init()
     {
-        $material         = Bracket::getComponent();
-        $this->sourcePath = $material->sourcePath;
-        $this->css[]      = "css/colors/{$material->theme}.css";
+        $$bracket         = Bracket::getComponent();
+        $this->sourcePath = $$bracket->sourcePath;
+        $this->css[]      = "css/colors/{$$bracket->theme}.css";
         parent::init();
     }
 }
