@@ -32,17 +32,17 @@ class Layout
     {
         Html::addCssClass($options, 'card-no-border');
 
-        $material = Bracket::getComponent();
+        $bracket = Bracket::getComponent();
 
-        if ($material->fixHeader) {
+        if ($bracket->fixHeader) {
             Html::addCssClass($options, 'fix-header');
         }
 
-        if ($material->fixSidebar) {
+        if ($bracket->fixSidebar) {
             Html::addCssClass($options, 'fix-sidebar');
         }
 
-        if (is_null($material->sidebarFile) and is_null($material->sidebarConfig)) {
+        if (is_null($bracket->sidebarFile) and is_null($bracket->sidebarConfig)) {
             Html::addCssClass($options, " single-column");
         }
 

@@ -1,6 +1,6 @@
 <?php
 
-use akupeduli\material\assets\core\ImageAsset;
+use akupeduli\bracket\assets\core\ImageAsset;
 
 $image = ImageAsset::register($this);
 ?>
@@ -15,17 +15,17 @@ $image = ImageAsset::register($this);
                 <b>
                     <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                     <!-- Dark Logo icon -->
-                    <img src="<?= $image->baseUrl ?>/logo-icon.png" alt="homepage" class="dark-logo" />
+                    <img src="<?=$image->baseUrl?>/logo-icon.png" alt="homepage" class="dark-logo" />
                     <!-- Light Logo icon -->
-                    <img src="<?= $image->baseUrl ?>/logo-light-icon.png" alt="homepage" class="light-logo" />
+                    <img src="<?=$image->baseUrl?>/logo-light-icon.png" alt="homepage" class="light-logo" />
                 </b>
                 <!--End Logo icon -->
                 <!-- Logo text -->
                 <span>
                          <!-- dark Logo text -->
-                         <img src="<?= $image->baseUrl ?>/logo-text.png" alt="homepage" class="dark-logo" />
-                    <!-- Light Logo text -->    
-                         <img src="<?= $image->baseUrl ?>/logo-light-text.png" class="light-logo" alt="homepage" /></span>
+                         <img src="<?=$image->baseUrl?>/logo-text.png" alt="homepage" class="dark-logo" />
+                    <!-- Light Logo text -->
+                         <img src="<?=$image->baseUrl?>/logo-light-text.png" class="light-logo" alt="homepage" /></span>
             </a>
         </div>
         <!-- ============================================================== -->
@@ -108,25 +108,25 @@ $image = ImageAsset::register($this);
                                 <div class="message-center">
                                     <!-- Message -->
                                     <a href="#">
-                                        <div class="user-img"> <img src="<?= $image->baseUrl ?>/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
+                                        <div class="user-img"> <img src="<?=$image->baseUrl?>/users/1.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
                                         <div class="mail-contnet">
                                             <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span> </div>
                                     </a>
                                     <!-- Message -->
                                     <a href="#">
-                                        <div class="user-img"> <img src="<?= $image->baseUrl ?>/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
+                                        <div class="user-img"> <img src="<?=$image->baseUrl?>/users/2.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
                                         <div class="mail-contnet">
                                             <h5>Sonu Nigam</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span> </div>
                                     </a>
                                     <!-- Message -->
                                     <a href="#">
-                                        <div class="user-img"> <img src="<?= $image->baseUrl ?>/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
+                                        <div class="user-img"> <img src="<?=$image->baseUrl?>/users/3.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
                                         <div class="mail-contnet">
                                             <h5>Arijit Sinh</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span> </div>
                                     </a>
                                     <!-- Message -->
                                     <a href="#">
-                                        <div class="user-img"> <img src="<?= $image->baseUrl ?>/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
+                                        <div class="user-img"> <img src="<?=$image->baseUrl?>/users/4.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
                                         <div class="mail-contnet">
                                             <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
                                     </a>
@@ -141,17 +141,17 @@ $image = ImageAsset::register($this);
                 <!-- ============================================================== -->
                 <!-- End Messages -->
                 <!-- ============================================================== -->
-                
+
                 <!-- ============================================================== -->
                 <!-- Profile -->
                 <!-- ============================================================== -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?= $image->baseUrl ?>/users/1.jpg" alt="user" class="profile-pic" /></a>
+                    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="<?=$image->baseUrl?>/users/1.jpg" alt="user" class="profile-pic" /></a>
                     <div class="dropdown-menu dropdown-menu-right scale-up">
                         <ul class="dropdown-user">
                             <li>
                                 <div class="dw-user-box">
-                                    <div class="u-img"><img src="<?= $image->baseUrl ?>/users/1.jpg" alt="user"></div>
+                                    <div class="u-img"><img src="<?=$image->baseUrl?>/users/1.jpg" alt="user"></div>
                                     <div class="u-text">
                                         <h4>Steave Jobs</h4>
                                         <p class="text-muted">varun@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>

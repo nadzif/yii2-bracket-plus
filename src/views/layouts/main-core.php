@@ -25,7 +25,7 @@ if ($bracket->sidebarConfig and is_null($bracket->sidebarFile)) {
         <div class="page-wrapper">
             <?=$content?>
             <footer class="footer">
-                <?=Yii::$app->params["material"]["footer"]?>
+                <?=Yii::$app->params["bracket"]["footer"]?>
             </footer>
         </div>
     </div>

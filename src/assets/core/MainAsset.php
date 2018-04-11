@@ -34,7 +34,7 @@ class MainAsset extends AssetBundle
     {
         $$bracket         = Bracket::getComponent();
         $this->sourcePath = $$bracket->sourcePath;
-        $this->css[]      = "css/colors/{$$bracket->theme}.css";
+        // $this->css[]      = "css/colors/{$$bracket->theme}.css";
         parent::init();
     }
 }

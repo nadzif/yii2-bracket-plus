@@ -1,6 +1,6 @@
 <?php
 
-namespace akupeduli\material\widgets\icons;
+namespace akupeduli\bracket\widgets\icons;
 
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;

@@ -1,18 +1,14 @@
 <?php
 
-namespace akupeduli\material\assets\plugins;
+namespace akupeduli\bracket\assets\plugins;
 
-use akupeduli\material\assets\core\PluginAsset;
+use akupeduli\bracket\assets\core\PluginAsset;
 
-/**
- * @Author: L Shaf
- * @Email : shafry2008@gmail.com
- */
 class DataTableAsset extends PluginAsset
 {
     public $pluginName = "datatables";
-    public $js = [
-        "jquery.dataTables.min.js"
+    public $js         = [
+        "jquery.dataTables.min.js",
     ];
     public $depends = [
         "yii\\web\\JqueryAsset",

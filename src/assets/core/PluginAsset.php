@@ -2,7 +2,7 @@
 
 namespace akupeduli\bracket\assets\core;
 
-use akupeduli\material\Bracket;
+use akupeduli\bracket\Bracket;
 use yii\base\InvalidConfigException;
 use yii\web\AssetBundle;
 
@@ -20,8 +20,8 @@ class PluginAsset extends AssetBundle
             throw new InvalidConfigException('pluginName must be set.');
         }
 
-        $material         = Bracket::getComponent();
-        $this->sourcePath = $material->assetPath . '/plugins/' . $this->pluginName;
+        $bracket          = Bracket::getComponent();
+        $this->sourcePath = $bracket->assetPath . '/plugins/' . $this->pluginName;
 
         parent::__construct($config);
     }
