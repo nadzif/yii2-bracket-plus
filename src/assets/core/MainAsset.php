@@ -15,13 +15,19 @@ class MainAsset extends AssetBundle
     ];
 
     public $css = [
-        "css/style.css",
+        "lib/font-awesome/css/font-awesome.css",
+        "lib/Ionicons/css/ionicons.css",
+        "lib/perfect-scrollbar/css/perfect-scrollbar.css",
+        "lib/jquery-switchbutton/jquery.switchButton.css",
     ];
 
     public $js = [
-        "js/jquery.slimscroll.js",
-        "js/waves.js",
-        "js/sidebarmenu.js",
+        "lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js",
+        "lib/moment/moment.js",
+        "lib/jquery-ui/jquery-ui.js",
+        "lib/jquery-switchbutton/jquery.switchButton.js",
+        "lib/peity/jquery.peity.js",
+        "js/bracket.js",
     ];
 
     public $depends = [
