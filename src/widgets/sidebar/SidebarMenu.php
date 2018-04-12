@@ -10,10 +10,10 @@ use yii\widgets\Menu;
 class SidebarMenu extends Menu
 {
     public $activateParents = true;
-    public $headingClass    = "nav-small-cap";
+    public $headingClass    = "br-sideleft overflow-y-auto";
     public $dividerClass    = "nav-devider";
     public $linkTemplate    = "<a {attr}>{icon}{label}</a>";
-    public $submenuTemplate = "\n<ul class='collapse'>\n{items}\n</ul>\n";
+    public $submenuTemplate = "\n<ul class='br-menu-sub'>\n{items}\n</ul>\n";
 
     public function init()
     {

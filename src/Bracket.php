@@ -15,6 +15,20 @@ class Bracket extends Component
     public $assetSourcePath;
     public $assetBundleClass;
 
+    /**
+     * @var string|array $sidebarConfig
+     * @note if $sidebarConfig is string, will be read as path and require it
+     */
+    public $sidebarConfig;
+    public $sidebarFile;
+    public $navbarFile;
+
+    public function init()
+    {
+        if (is_string($this->sidebarConfig)) {
+            $this->sidebarConfig = \Yii::getAlias((string) $this->sidebarConfig);
+        }
+    }
     public static function getComponent()
     {
         try {

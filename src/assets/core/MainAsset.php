@@ -15,6 +15,7 @@ class MainAsset extends AssetBundle
     ];
 
     public $css = [
+        "css/bracket.css",
         "lib/font-awesome/css/font-awesome.css",
         "lib/Ionicons/css/ionicons.css",
         "lib/perfect-scrollbar/css/perfect-scrollbar.css",
