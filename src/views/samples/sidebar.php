@@ -5,71 +5,21 @@ use akupeduli\bracket\widgets\Menu;
     <label class="sidebar-label pd-x-10 mg-t-20 op-3">Navigation</label>
 <?=Menu::widget(
     [
-        "items"   => [
-            ["label" => "Home", "url" => ["."], "icon" => "menu-item-icon tx-24 icon ion-ios-home-outline"],
-            ["label" => "Layout", "url" => ["site/layout"], "icon" => "files-o"],
-            ["label" => "Error page", "url" => ["site/error-page"], "icon" => "close"],
+        "items" => [
+            ["label" => "Home", "url" => ["."], "icon" => "ion-ios-home-outline"],
+            ["label" => "Layout", "url" => ["."], "icon" => "ion-ios-home-outline"],
+            ["label" => "Error page", "url" => ["."], "icon" => "ion-ios-home-outline"],
             [
-                "label" => "Widgets",
-                "icon"  => "th",
-                "url"   => "#",
-                "items" => [
-                    ["label" => "Menu", "url" => ["site/menu"]],
-                    ["label" => "Panel", "url" => ["site/panel"]],
+                "label"  => "Widgets",
+                "icon"   => "ion-ios-home-outlinex",
+                "url"    => "#",
+                'hasSub' => true,
+                "items"  => [
+                    ["label" => "Menu", "url" => ["."], 'isSub' => true],
+                    ["label" => "Panel", "url" => ["."], 'isSub' => true],
                 ],
             ],
-            [
-                "label" => "Badges",
-                "url"   => "#",
-                "icon"  => "table",
-                "items" => [
-                    [
-                        "label" => "Default",
-                        "url"   => "#",
-                        "badge" => "123",
-                    ],
-                    [
-                        "label"        => "Success",
-                        "url"          => "#",
-                        "badge"        => "new",
-                        "badgeOptions" => ["class" => "label-success"],
-                    ],
-                    [
-                        "label"        => "Danger",
-                        "url"          => "#",
-                        "badge"        => "!",
-                        "badgeOptions" => ["class" => "label-danger"],
-                    ],
-                ],
-            ],
-            [
-                "label" => "Multilevel",
-                "url"   => "#",
-                "icon"  => "table",
-                "items" => [
-                    [
-                        "label" => "Second level 1",
-                        "url"   => "#",
-                    ],
-                    [
-                        "label" => "Second level 2",
-                        "url"   => "#",
-                        "items" => [
-                            [
-                                "label" => "Third level 1",
-                                "url"   => "#",
-                            ],
-                            [
-                                "label" => "Third level 2",
-                                "url"   => "#",
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
-        'options' => [
-            'class' => 'br-menu-item',
+            ["label" => "Error page", "url" => ["."], "icon" => "ion-ios-home-outline"],
         ],
     ]
 )

@@ -8,5 +8,5 @@ namespace akupeduli\bracket\widgets\icons;
  */
 class Ionic extends Core
 {
-    public $prefixCss = "icon";
+    public $prefixCss = "";
 }
