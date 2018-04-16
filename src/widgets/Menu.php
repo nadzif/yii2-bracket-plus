@@ -10,79 +10,57 @@ use yii\helpers\Html;
 
 class Menu extends \yii\widgets\Menu
 {
-    public $labelTemplate   = '{label}';
-    public $linkTemplate    = '<a href="{url}" class="{hasSub} {isSub}">{icon}<span class="menu-item-label">{label}</span></a>';
+    public $labelTemplate = '{label}';
+    public $linkTemplate = '<a href="{url}" class="{class} {hasSub}">{icon} {attr}</a>';
     public $submenuTemplate = "\n<ul class=\"br-menu-sub\">\n{items}\n</ul>\n";
     public $activateParents = true;
 
     public function init()
     {
         Html::addCssClass($this->options, 'br-sideleft-menu');
-        Html::addCssClass($this->itemOptions, 'br-menu-item');
-
         parent::init();
     }
 
-    // protected function renderSubItems($items)
-    // {
-    //     Html::removeCssClass($this->itemOptions, 'br-menu-item');
-    //     Html::addCssClass($this->itemOptions, 'sub-item');
-    //     $this->linkTemplate = '<a href="{url}" class="sub-link">{icon}{label}</a>';
-
-    //     $renderedItems = [];
-
-    //     foreach ($items as $item) {
-    //         $renderedItems[] = $this->renderItem($item);
-    //     }
-
-    //     return \implode("\n", $renderedItems);
-    // }
 
     protected function renderItem($item)
     {
         $renderedItem = parent::renderItem($item);
-        $icon         = isset($item['icon']) ? $item['icon'] : null;
-        $defaultIcon  = "icon {$icon}";
+        $icon = isset($item['icon']) ? $item['icon'] : null;
+        $defaultIcon = "icon {$icon}";
 
-        // $defaultIcon  = null;
-        // if ($icon) {
-        //     if (\is_string($icon)) {
-        //         $defaultIcon = "icon {$icon}";
-        //     }
-
-        //     // if (is_array($icon)) {
-        //     //     $libs = [
-        //     //         'fa' => \akupeduli\bracket\widgets\icons\FontAwesome::class,
-        //     //         'sp' => \akupeduli\bracket\widgets\icons\SimpleLine::class,
-        //     //     ];
-
-        //     //     if (\in_array($icon['type'], $libs)) {
-        //     //         $className   = $libs[$icon['type']];
-        //     //         $defaultIcon = new $className($icon['name'], ArrayHelper::getValue($item, 'iconOptions', []));
-        //     //     }
-        //     // }
-        // }
         $hasSub = ArrayHelper::getValue($item, 'hasSub');
-        $isSub  = ArrayHelper::getValue($item, 'hasSub');
-
-        if ($isSub) {
-            // Html::removeCssClass($this->itemOptions, 'br-menu-item');
-            // Html::addCssClass($this->itemOptions, 'sub-item');
-            $this->linkTemplate = '<a href="{url}" class="sub-link">{icon}{label}</a>';
-        } else {
-            // Html::removeCssClass($this->itemOptions, 'sub-item');
-            // Html::addCssClass($this->itemOptions, 'br-menu-item');
-            // $this->linkTemplate = '<a href="{url}" class="{hasSub} {isSub}">{icon}<span class="menu-item-label">{label}</span></a>';
-        }
+        $isSub = ArrayHelper::getValue($item, 'isSub');
+        $label = ArrayHelper::getValue($item, 'label');
 
         return strtr(
             $renderedItem,
             [
-                '{icon}'   => $defaultIcon ? Html::tag('i', null, ['class' => "menu-item-icon tx-24 {$defaultIcon}"]) : '',
-                '{hasSub}' => $hasSub ? 'with-sub' : 'br-menu-link',
-                '{isSub}'  => $isSub ? 'sub-item' : 'br-menu-link',
-                // '{subItems}' => $this->renderSubItems(ArrayHelper::getValue($item, 'subItems'))
+                '{class}' => is_null($isSub) ? 'br-menu-link' : 'sub-link',
+                '{icon}' => $defaultIcon ? Html::tag('i', null, ['class' => "menu-item-icon tx-24 {$defaultIcon}"]) : '',
+                '{attr}' => !$isSub ? Html::tag('span', $label, ['class' => 'menu-item-label']) : $label,
+                '{hasSub}' => $hasSub ? 'with-sub' : '',
             ]
         );
+    }
+
+    protected function renderItems($items)
+    {
+        $lines = [];
+        foreach ($items as $item) {
+            $menu = $this->renderItem($item);
+            if (!empty($item['items'])) {
+                $menu .= strtr($this->submenuTemplate, [
+                    '{items}' => $this->renderItems($item['items']),
+                ]);
+            }else{
+                if($item['active']){
+                    Html::addCssClass($this->linkTemplate,'active');
+                }
+            }
+
+            $isSub = ArrayHelper::getValue($item, 'isSub');
+            $lines[] = Html::tag('li', $menu, ['class' => $isSub ? 'sub-item' : 'br-menu-item']);
+        }
+        return implode("\n", $lines);
     }
 }

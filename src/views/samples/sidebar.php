@@ -6,7 +6,7 @@ use akupeduli\bracket\widgets\Menu;
 <?=Menu::widget(
     [
         "items" => [
-            ["label" => "Home", "url" => ["."], "icon" => "ion-ios-home-outline"],
+            ["label" => "Home", "url" => [Yii::$app->getHomeUrl()], "icon" => "ion-ios-home-outline"],
             ["label" => "Layout", "url" => ["."], "icon" => "ion-ios-home-outline"],
             ["label" => "Error page", "url" => ["."], "icon" => "ion-ios-home-outline"],
             [
