@@ -7,15 +7,15 @@ use akupeduli\bracket\widgets\Menu;
     [
         "items" => [
             ["label" => "Home", "url" => [Yii::$app->getHomeUrl()], "icon" => "ion-ios-home-outline"],
-            ["label" => "Layout", "url" => ["."], "icon" => "ion-ios-home-outline"],
+            ["label" => "Test", "url" => ["/test"], "icon" => "ion-ios-home-outline"],
             ["label" => "Error page", "url" => ["."], "icon" => "ion-ios-home-outline"],
             [
                 "label"  => "Widgets",
-                "icon"   => "ion-ios-home-outlinex",
+                "icon"   => "ion-ios-home-outline",
                 "url"    => "#",
                 'hasSub' => true,
                 "items"  => [
-                    ["label" => "Menu", "url" => ["."], 'isSub' => true],
+                    ["label" => "Menu", "url" => ["/test"], 'isSub' => true],
                     ["label" => "Panel", "url" => ["."], 'isSub' => true],
                 ],
             ],
