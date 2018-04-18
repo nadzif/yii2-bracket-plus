@@ -14,7 +14,6 @@ class BracketAsset extends AssetBundle
         // "css/style.css"
     ];
     public $depends = [
-        "akupeduli\\bracket\\assets\\core\\MainAsset",
-        // "akupeduli\\bracket\\assets\\plugins\\StickyKitAsset"
+        "akupeduli\\bracket\\assets\\core\\MainAsset"
     ];
 }
