@@ -11,6 +11,9 @@ use yii\helpers\ArrayHelper;
  */
 class Bootstrap implements BootstrapInterface
 {
+    /**
+     * @param \yii\web\Application $app
+     */
     public function bootstrap($app)
     {
         // run this if only the remark component is loaded / defined
