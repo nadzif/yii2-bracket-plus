@@ -2,18 +2,24 @@
 
 namespace akupeduli\bracket;
 
+use akupeduli\bracket\assets\BracketAsset;
 use yii\base\Component;
 use yii\base\InvalidConfigException;
 use yii\web\AssetBundle;
 
+/**
+ *
+ * @property string $assetPath
+ * @property string $sourcePath
+ */
 class Bracket extends Component
 {
     public static $componentName    = "bracket";
     public static $componentVersion = "1.0";
 
     /* must be filled */
-    public $assetSourcePath;
-    public $assetBundleClass;
+    public $assetSourcePath; // path of source bracket plus
+    public $assetBundleClass; // class of asset bundle (in case if you want to custom)
 
     /**
      * @var string|array $sidebarConfig
@@ -46,7 +52,7 @@ class Bracket extends Component
 
     public function getSourcePath()
     {
-        return $this->assetSourcePath . "/template";
+        return $this->assetSourcePath;
     }
 
     public function registerAsset($view)
@@ -55,7 +61,7 @@ class Bracket extends Component
             throw new InvalidConfigException('Please set $assetSourcePath of remark admin template');
         }
         if ($this->assetBundleClass === null) {
-            throw new InvalidConfigException('Please set $assetBundleClass property.');
+            $this->assetBundleClass = BracketAsset::class;
         }
 
         /** @var AssetBundle $assetBundleClass */
