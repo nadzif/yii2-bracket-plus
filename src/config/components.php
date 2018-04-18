@@ -1,28 +1,26 @@
 <?php
 
 use akupeduli\bracket\assets\plugins\DataTableAsset;
+use yii\bootstrap4\BootstrapPluginAsset;
+use yii\bootstrap4\PopperAsset;
+use yii\web\JqueryAsset;
 use yii\web\View;
 
 return [
-    'yii\web\JqueryAsset'                           => [
+    JqueryAsset::class => [
         "jsOptions" => [
             "position" => View::POS_HEAD,
         ],
     ],
 
-    'yii\bootstrap\BootstrapPluginAsset'            => [
-        "jsOptions" => [
-            "position" => View::POS_HEAD,
+    BootstrapPluginAsset::class => [
+        'depends' => [
+            JqueryAsset::class,
+            PopperAsset::class
         ],
     ],
 
-    'yii\bootstrap\PopperAsset'                     => [
-        "jsOptions" => [
-            "position" => View::POS_HEAD,
-        ],
-    ],
-
-    'mimicreative\datatables\assets\DataTableAsset' => [
-        'class' => DataTableAsset::className(),
+    DataTableAsset::class => [
+        'class' => DataTableAsset::class,
     ],
 ];
