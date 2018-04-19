@@ -47,7 +47,7 @@ class Bracket extends Component
 
     public function getAssetPath()
     {
-        return $this->assetSourcePath . "/assets";
+        return $this->assetSourcePath;
     }
 
     public function getSourcePath()
