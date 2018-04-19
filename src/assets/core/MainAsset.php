@@ -2,46 +2,45 @@
 
 namespace akupeduli\bracket\assets\core;
 
+use akupeduli\bracket\assets\plugins\JqueryUIAsset;
+use rmrevin\yii\fontawesome\AssetBundle as FABundle;
+use rmrevin\yii\ionicon\AssetBundle as IonBundle;
+use akupeduli\bracket\assets\plugins\PerfectScrollAsset;
 use akupeduli\bracket\Bracket;
+use yii\bootstrap4\BootstrapPluginAsset;
 use yii\web\AssetBundle;
+use yii\web\YiiAsset;
 
 class MainAsset extends AssetBundle
 {
     public $publishOptions = [
-        "except" => [
-            "*.html", "*.scss", "*.cfg", "*.config",
-            "*.less",
-        ],
+        'only' => [
+            "css/*", "js/*"
+        ]
     ];
 
     public $css = [
         "css/bracket.css",
-        "lib/font-awesome/css/font-awesome.css",
-        "lib/Ionicons/css/ionicons.css",
-        "lib/perfect-scrollbar/css/perfect-scrollbar.css",
-        "lib/jquery-switchbutton/jquery.switchButton.css",
     ];
 
     public $js = [
-        "lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js",
-        "lib/moment/moment.js",
-        "lib/jquery-ui/jquery-ui.js",
-        "lib/jquery-switchbutton/jquery.switchButton.js",
-        "lib/peity/jquery.peity.js",
-        "js/bracket.js",
+        // I make custom.js for custom use 
+        // "js/bracket.js",
     ];
 
     public $depends = [
-        "yii\\web\\YiiAsset",
-        "yii\\bootstrap\\BootstrapAsset",
-        "yii\\bootstrap\\BootstrapPluginAsset",
+        YiiAsset::class,
+        BootstrapPluginAsset::class,
+        PerfectScrollAsset::class,
+        FABundle::class,
+        JqueryUIAsset::class,
+        IonBundle::class
     ];
 
     public function init()
     {
         $bracket          = Bracket::getComponent();
         $this->sourcePath = $bracket->sourcePath;
-        // $this->css[]      = "css/colors/{$$bracket->theme}.css";
         parent::init();
     }
 }
