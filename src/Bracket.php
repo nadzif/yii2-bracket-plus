@@ -20,6 +20,9 @@ class Bracket extends Component
     /* must be filled */
     public $assetSourcePath; // path of source bracket plus
     public $assetBundleClass; // class of asset bundle (in case if you want to custom)
+    
+    /* custom option */
+    public $collapseMenu = false;
 
     /**
      * @var string|array $sidebarConfig

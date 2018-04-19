@@ -22,28 +22,21 @@ class Layout
 
         return $asString ? Html::renderTagAttributes($htmlOptions) : $htmlOptions;
     }
-
+    
     /**
      * Adds body tag options
+     *
      * @param array $options given options
+     *
      * @return string | array
+     * @throws \yii\base\InvalidConfigException
      */
     private static function _bodyOptions($options)
     {
-        Html::addCssClass($options, 'card-no-border');
-
+        /** @var Bracket $bracket */
         $bracket = Bracket::getComponent();
-
-        if ($bracket->fixHeader) {
-            Html::addCssClass($options, 'fix-header');
-        }
-
-        if ($bracket->fixSidebar) {
-            Html::addCssClass($options, 'fix-sidebar');
-        }
-
-        if (is_null($bracket->sidebarFile) and is_null($bracket->sidebarConfig)) {
-            Html::addCssClass($options, " single-column");
+        if ($bracket->collapseMenu) {
+            Html::addCssClass($options, "collapsed-menu with-subleft");
         }
 
         return $options;
