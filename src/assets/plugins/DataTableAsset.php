@@ -3,7 +3,6 @@
 namespace akupeduli\bracket\assets\plugins;
 
 use akupeduli\bracket\assets\core\PluginAsset;
-use yii\bootstrap4\BootstrapAsset;
 use yii\bootstrap4\BootstrapPluginAsset;
 use yii\web\JqueryAsset;
 
