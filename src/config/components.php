@@ -20,7 +20,7 @@ return [
         ],
     ],
 
-    DataTableAsset::class => [
+    'mimicreative\datatables\assets\DataTableAsset' => [
         'class' => DataTableAsset::class,
     ],
 ];
