@@ -21,7 +21,7 @@ class PluginAsset extends AssetBundle
         }
 
         $bracket          = Bracket::getComponent();
-        $this->sourcePath = $bracket->assetPath . '/plugins/' . $this->pluginName;
+        $this->sourcePath = $bracket->assetPath . '/lib/' . $this->pluginName;
 
         parent::__construct($config);
     }
