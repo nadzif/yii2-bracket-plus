@@ -2,18 +2,19 @@
 
 namespace akupeduli\bracket\assets;
 
+use akupeduli\bracket\assets\core\MainAsset;
 use yii\web\AssetBundle;
 
 class BracketAsset extends AssetBundle
 {
     public $sourcePath = "@akupeduli/bracket/web";
-    public $js         = [
+    public $js = [
         "js/custom.js",
     ];
     public $css = [
-        // "css/style.css"
+        "css/style.css"
     ];
     public $depends = [
-        "akupeduli\\bracket\\assets\\core\\MainAsset"
+        MainAsset::class
     ];
 }
