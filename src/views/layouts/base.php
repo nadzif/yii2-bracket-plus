@@ -4,6 +4,8 @@
 /** @var string $content */
 
 use akupeduli\bracket\Bracket;
+use akupeduli\bracket\helpers\Layout;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
@@ -37,11 +39,15 @@ $this->beginPage();
     <?php $this->head();?>
 </head>
 <?php
-echo Html::beginTag("body");
-$this->beginBody();
-echo $content;
-$this->endBody();
-echo Html::endTag("body");
+    $defaultOptions = Layout::getHtmlOptions("body");
+    $bodyOptions = ArrayHelper::getValue(Yii::$app->params["bracket"], "bodyOptions", []);
+    $bodyOptions = ArrayHelper::merge($defaultOptions, $bodyOptions);
+
+    echo Html::beginTag("body", $bodyOptions);
+    $this->beginBody();
+    echo $content;
+    $this->endBody();
+    echo Html::endTag("body");
 ?>
 </html>
 
