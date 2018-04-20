@@ -169,13 +169,5 @@
             </div><!-- dropdown-menu -->
           </div><!-- dropdown -->
         </nav>
-        <div class="navicon-right">
-          <a id="btnRightMenu" href="" class="pos-relative">
-            <i class="icon ion-ios-chatboxes-outline"></i>
-            <!-- start: if statement -->
-            <span class="square-8 bg-danger pos-absolute t-10 r--5 rounded-circle"></span>
-            <!-- end: if statement -->
-          </a>
-        </div><!-- navicon-right -->
       </div><!-- br-header-right -->
     </div><!-- br-header -->
