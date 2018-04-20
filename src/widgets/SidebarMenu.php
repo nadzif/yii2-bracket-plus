@@ -9,12 +9,12 @@ use yii\helpers\Url;
 use yii\widgets\Menu;
 
 /**
- * Class Sidebar
+ * Class SidebarMenu
  *
  * @author  L Shaf <shafry2008@gmail.com>
  * @package akupeduli\bracket\widgets
  */
-class Sidebar extends Menu
+class SidebarMenu extends Menu
 {
     public $activateParents = true;
     public $linkTemplate = "<a {attr}>{icon}{label}</a>";
