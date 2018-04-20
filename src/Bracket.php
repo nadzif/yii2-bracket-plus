@@ -19,7 +19,7 @@ class Bracket extends Component
 
     /* must be filled */
     public $assetSourcePath; // path of source bracket plus
-    public $assetBundleClass; // class of asset bundle (in case if you want to custom)
+    public $assetBundleClass =  BracketAsset::class; // class of asset bundle (in case if you want to custom)
     
     /* custom option */
     public $collapseMenu = false;
@@ -28,9 +28,9 @@ class Bracket extends Component
      * @var string|array $sidebarConfig
      * @note if $sidebarConfig is string, will be read as path and require it
      */
-    public $sidebarConfig;
-    public $sidebarFile;
-    public $navbarFile;
+    public $sidebarConfig = "@akupeduli/bracket/config/sidebar.php";
+    public $sidebarFile = "@akupeduli/bracket/views/samples/sidebar";
+    public $navbarFile = "@akupeduli/bracket/views/samples/navbar";
 
     public function init()
     {
@@ -64,7 +64,7 @@ class Bracket extends Component
             throw new InvalidConfigException('Please set $assetSourcePath of remark admin template');
         }
         if ($this->assetBundleClass === null) {
-            $this->assetBundleClass = BracketAsset::class;
+            throw new InvalidConfigException('Please set $assetBundleClass property.');
         }
 
         /** @var AssetBundle $assetBundleClass */
