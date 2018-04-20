@@ -1,27 +1,29 @@
 <?php
 
 use akupeduli\bracket\widgets\Breadcrumbs;
+use rmrevin\yii\ionicon\Ion;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
-$this->beginContent(__DIR__ . "/main-core.php")?>
-<div class="container-fluid">
-    <div class="row page-titles">
-        <div class="col-md-5 col-8 align-self-center">
-            <?php
+$this->beginContent(__DIR__ . "/main-core.php");
+
+$icon = ArrayHelper::getValue($this->params, "pageIcon", Ion::_IOS_BOOKMARKS_OUTLINE);
+$desc = ArrayHelper::getValue($this->params, "pageDescription", "Your description");
 $title = ArrayHelper::getValue($this->params, "pageTitle", $this->title);
-echo Html::tag("h3", $title, ["class" => "text-themecolor m-b-0 m-t-0"]);
-$breadcrumbs = ArrayHelper::getValue($this->params, "breadcrumbs", null);
+$breadcrumbs = ArrayHelper::getValue($this->params, "breadcrumbs");
+
 if (!is_null($breadcrumbs)) {
-    echo Breadcrumbs::widget(["links" => $breadcrumbs]);
+    $breadHtml = Breadcrumbs::widget(["links" => $breadcrumbs]);
+    echo Html::tag("div", $breadHtml, ["class" => "br-pageheader"]);
 }
-?>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <?=$content?>
-        </div>
-    </div>
-</div>
-<?php $this->endContent();?>
+
+$titleHtml = Html::tag('h4', $title);
+$titleDesc = ($desc ? Html::tag("p", $desc, ["class" => "mg-b-0"]) : "");
+
+echo Html::beginTag("div", ["class" => "br-pagetitle"]) .
+    ($icon ? Ion::icon($icon)->addCssClass("icon") : "") .
+    Html::tag("div", $titleHtml . $titleDesc) .
+Html::endTag("div");
+
+echo Html::tag("div", $content, ["class" => "br-pagebody"]);
+$this->endContent();
