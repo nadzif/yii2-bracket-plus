@@ -1,11 +1,16 @@
 <?php
 
+use akupeduli\bracket\widgets\SidebarMenu;
+use rmrevin\yii\ionicon\Ion;
+
 return [
     "items" => [
-        ["label" => "Personal"],
         [
             "label" => "Dashboard",
-            "icon"  => "<i class=\"mdi mdi-gauge\"></i>",
+            "icon"  => [
+                'name' => Ion::_IOS_HOME_OUTLINE,
+                'size' => SidebarMenu::_ICON_SIZE_24
+            ],
             "items" => [
                 [
                     "label" => "Dashboard 1",
@@ -23,7 +28,10 @@ return [
         ],
         [
             "label" => "App",
-            "icon"  => "<i class=\"mdi mdi-bullseye\"></i>",
+            "icon"  => [
+                'name' => Ion::_ANDROID_STAR_OUTLINE,
+                'size' => SidebarMenu::_ICON_SIZE_24
+            ],
             "items" => [
                 [
                     "label" => "App 1",
@@ -39,11 +47,12 @@ return [
                 ],
             ],
         ],
-        ["label" => "divider"],
-        ["label" => "Form and Other"],
         [
             "label" => "Form",
-            "icon"  => "<i class=\"mdi mdi-gauge\"></i>",
+            "icon"  => [
+                'name' => Ion::_SOCIAL_WINDOWS_OUTLINE,
+                'class' => 'custom-class'
+            ],
             "items" => [
                 [
                     "label" => "Form 1",
@@ -61,7 +70,10 @@ return [
         ],
         [
             "label" => "Other",
-            "icon"  => "<i class=\"mdi mdi-bullseye\"></i>",
+            "icon"  => [
+                'name' => Ion::_IOS_BOOKMARKS_OUTLINE,
+                'class' => 'custom-class'
+            ],
             "items" => [
                 [
                     "label" => "Other 1",

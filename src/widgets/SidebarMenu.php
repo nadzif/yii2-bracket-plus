@@ -20,6 +20,9 @@ class SidebarMenu extends Menu
     public $linkTemplate = "<a {attr}>{icon}{label}</a>";
     public $submenuTemplate = "\n<ul class='br-menu-sub'>\n{items}\n</ul>\n";
     
+    const _ICON_SIZE_20 = "tx-20";
+    const _ICON_SIZE_24 = "tx-24";
+    
     public function init()
     {
         $this->_initOption();
@@ -66,9 +69,18 @@ class SidebarMenu extends Menu
         $template = ArrayHelper::getValue($item, "template", $this->linkTemplate);
         $labelText = ArrayHelper::remove($item, "label", "");
         $iconImage = ArrayHelper::remove($item, "icon", "");
-        $icon = Ion::icon($iconImage)->addCssClass("menu-item-icon icon tx-24");
         $label = Html::tag("span", $labelText, ["class" => "menu-item-label"]);
         
+        $icon = $iconImage;
+        if (is_array($iconImage)) {
+            $iconName = ArrayHelper::remove($iconImage, 'name', '');
+            $iconSize = ArrayHelper::remove($iconImage, "size", self::_ICON_SIZE_20);
+            
+            Html::addCssClass($iconImage, ["menu-item-icon", "icon", $iconSize]);
+
+            $icon = Ion::icon($iconName)->addCssClass($iconImage["class"]);
+        }
+    
         return strtr($template, [
             "{attr}" => $this->_formatLinkAttr($item),
             "{icon}" => $icon,
