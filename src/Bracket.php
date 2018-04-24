@@ -14,6 +14,11 @@ use yii\web\AssetBundle;
  */
 class Bracket extends Component
 {
+    const THEME_DEFAULT = "default";
+    const THEME_OREO = "oreo"; 
+    const THEME_DARK = "dark";
+    const THEME_SIMPLE = "simple-white";
+
     public static $componentName    = "bracket";
     public static $componentVersion = "1.0";
 
@@ -23,6 +28,7 @@ class Bracket extends Component
     
     /* custom option */
     public $collapseMenu = false;
+    public $theme = self::THEME_DEFAULT;
 
     /**
      * @var string|array $sidebarConfig

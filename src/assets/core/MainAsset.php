@@ -39,8 +39,15 @@ class MainAsset extends AssetBundle
 
     public function init()
     {
+        /** @var Bracket $bracket */
         $bracket          = Bracket::getComponent();
         $this->sourcePath = $bracket->sourcePath;
+        if ($bracket->theme !== Bracket::THEME_DEFAULT) {
+            $themeCss  = "css/bracket." . $bracket->theme;
+            $themeCss .= (YII_ENV_DEV ? "" : ".min") . ".css";
+            $this->css[] = $themeCss;
+        }
+
         parent::init();
     }
 }
