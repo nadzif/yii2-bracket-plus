@@ -1,6 +1,6 @@
 <?php
 
-namespace akupeduli\bracket\widgets;
+namespace nadzif\bracket\widgets;
 
 use yii\bootstrap\Widget;
 use yii\bootstrap\Alert;

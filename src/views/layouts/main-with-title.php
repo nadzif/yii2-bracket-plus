@@ -1,6 +1,6 @@
 <?php
 
-use akupeduli\bracket\widgets\Breadcrumbs;
+use nadzif\bracket\widgets\Breadcrumbs;
 use rmrevin\yii\ionicon\Ion;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
