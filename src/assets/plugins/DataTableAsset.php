@@ -3,7 +3,7 @@
 namespace akupeduli\bracket\assets\plugins;
 
 use akupeduli\bracket\assets\core\PluginAsset;
-use yii\bootstrap4\BootstrapPluginAsset;
+use yii\bootstrap\BootstrapPluginAsset;
 use yii\web\JqueryAsset;
 
 class DataTableAsset extends PluginAsset

@@ -7,7 +7,7 @@ use rmrevin\yii\fontawesome\AssetBundle as FABundle;
 use rmrevin\yii\ionicon\AssetBundle as IonBundle;
 use akupeduli\bracket\assets\plugins\PerfectScrollAsset;
 use akupeduli\bracket\Bracket;
-use yii\bootstrap4\BootstrapPluginAsset;
+use yii\bootstrap\BootstrapPluginAsset;
 use yii\web\AssetBundle;
 use yii\web\YiiAsset;
 

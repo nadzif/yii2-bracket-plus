@@ -2,8 +2,8 @@
 
 namespace akupeduli\bracket\widgets;
 
-use yii\bootstrap4\Widget;
-use yii\bootstrap4\Alert;
+use yii\bootstrap\Widget;
+use yii\bootstrap\Alert;
 use yii\helpers\Html;
 
 /**

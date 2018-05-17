@@ -1,8 +1,8 @@
 <?php
 
 use akupeduli\bracket\assets\plugins\DataTableAsset;
-use yii\bootstrap4\BootstrapPluginAsset;
-use yii\bootstrap4\PopperAsset;
+use yii\bootstrap\BootstrapPluginAsset;
+use yii\bootstrap\PopperAsset;
 use yii\web\JqueryAsset;
 use yii\web\View;
 
